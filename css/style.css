@@ -107,7 +107,7 @@ hr {
 
 
 .wrapper span:before{
-    content: 'Computer Science';
+    content: 'creating change.';
     animation: animate infinite 8s;
 }
 
@@ -194,7 +194,6 @@ hr {
 
 .imgcard {
   position: relative;
-  width: 45%;
   display: inline-block;
 }
 
@@ -244,4 +243,15 @@ hr {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.parent {
+    display: flex;
+    flex-direction:row;
+}
+
+
+.column {
+    flex: 1 1 0px;
   }
