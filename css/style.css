@@ -21,6 +21,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Poppins;
+    min-width: 900px;
 }
 
 #container {
@@ -53,6 +54,7 @@ a:hover, a:focus {
     white-space: nowrap;
     font-family: Poppins;
     text-align: center;
+    min-width: 700px;
 }
 
 .wrapper h1{
