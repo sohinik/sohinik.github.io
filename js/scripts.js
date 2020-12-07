@@ -28,13 +28,14 @@ function buttonAnimation(hov, selector, dValue) {
 	const btn2 = document.querySelector(selector);
 
 	if(btn){
-	btn.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
-	btn.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+		console.log("button1");
+		btn.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
+		btn.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
 	}
 	
 	if(btn2){
-	btn2.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
-	btn2.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+		btn2.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
+		btn2.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
 	}
 }
 
