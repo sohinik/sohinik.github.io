@@ -27,11 +27,15 @@ function buttonAnimation(hov, selector, dValue) {
 	const btn = document.querySelector(hov);
 	const btn2 = document.querySelector(selector);
 
+	if(btn){
 	btn.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
 	btn.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+	}
 	
+	if(btn2){
 	btn2.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
 	btn2.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+	}
 }
 
 const blobA =
