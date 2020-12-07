@@ -1,0 +1,30 @@
+.blob-btn {
+	height: 1112px;
+	width: 834px;
+	background: white;
+	border: none;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.blob-btn:focus {
+	outline: none;
+}
+
+svg path {
+	cursor: pointer;
+}
+
+h1 {
+	color: #000;
+	margin: 0;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+}
+
+h1:hover {
+	cursor: pointer;
+}
+
+
