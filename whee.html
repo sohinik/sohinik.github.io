@@ -60,6 +60,7 @@
             const btn2 = document.querySelector(selector);
 
             if(btn){
+                console.log("button");
                 btn.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
                 btn.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
             }
