@@ -38,7 +38,7 @@ p {
 }
 
 h4 {
-    font-size: 26px;
+    font-size: 3.5vh;
     font-weight: 700;
     color: #665554;
     letter-spacing: 0.25px;
@@ -228,7 +228,7 @@ html {
   will-change: transform;
   z-index: 9999 !important;
 
-  /*border-right: 3px solid #665554;*/
+  border-right: 3px solid #665554;
 }
 
 .menu-toggle {
@@ -752,6 +752,9 @@ section.contact-me {
     #txt {
         display: none;
     }
+}
+
+@media screen and (max-width: 1845px) {   
     
     #menu-toggle,
     #menu-close {
@@ -800,8 +803,8 @@ section.contact-me {
         left: 3%;
     }
     .isotope-item {
-        width: 94%;
-        margin: 3%;
+        width: 48%;
+        margin: 1%;
     }
     .left-image-post img {
         margin-bottom: 30px;
@@ -871,7 +874,7 @@ figure.snip1 {
     color: #665554;
   }
   figure.snip1 span {
-      font-size: 14px;
+      font-size: 2vh;
       /* font-style: italic; */
       display: block;
       color: #665554;
