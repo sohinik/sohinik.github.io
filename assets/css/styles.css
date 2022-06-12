@@ -48,8 +48,8 @@ p {
 }
 
 h1 {
-    font-size: 15vh;
-    line-height: 20vh;
+    font-size: 6vw;
+    line-height: 8vw;
     font-family: 'Prata';
 }
 
@@ -67,7 +67,7 @@ h3 {
 }
 
 h4 {
-    font-size: 3.5vh;
+    font-size: 2vw;
     font-weight: 700;
     color: #252632;
     letter-spacing: 0.25px;
@@ -110,7 +110,7 @@ html {
 
 .section {
     position: relative;
-    min-height: 100vh;
+    min-height: fit-content;
     margin-bottom: 70px;
     /* border-bottom: 3px solid #252632; */
 }
@@ -262,7 +262,7 @@ figure.snip1 h4 {
 }
 
 figure.snip1 span {
-    font-size: 2vh;
+    font-size: 1.2vw;
     /* font-style: italic; */
     display: block;
     color: #252632;
@@ -318,51 +318,51 @@ figure.snip1 span a {
 }
 
 .flower-0 {
-    top: 30vh;
+    top: 18vw;
     left: 50vw;
-    height: 15vh;
+    height: 9vw;
 }
 
 .flower-1 {
-    top: 2vh;
+    top: 1vw;
     left: 30vw;
-    height: 10vh;
+    height: 6vw;
 }
 
 .flower-2 {
-    top: 80vh;
+    top: 47vw;
     left: 14vw;
-    height: 13vh;
+    height: 8vw;
 }
 
 .flower-3 {
-    top: 70vh;
+    top: 40vw;
     left: 55vw;
-    height: 13vh;
+    height: 7vw;
 }
 
 .flower-4 {
-    top: 47vh;
+    top: 28vw;
     left: 85vw;
-    height: 18vh;
+    height: 10vw;
 }
 
 .flower-5 {
-    top: 77vh;
+    top: 45vw;
     left: 63vw;
-    height: 12vh;
+    height: 8vw;
 }
 
 .flower-6 {
-    top: 75vh;
+    top: 42vw;
     left: 20vw;
-    height: 13vh;
+    height: 8vw;
 }
 
 .flower-7 {
-    top: 10vh;
+    top: 6vw;
     left: 60vw;
-    height: 15vh;
+    height: 9vw;
 }
 
 
@@ -505,7 +505,7 @@ figure.snip1 span a {
 }
 
 .inline-para img {
-    max-height: 15vh;
+    max-height: 10vw;
     display: inline-block;
     vertical-align: middle;
 
@@ -521,7 +521,7 @@ figure.snip1 span a {
 }
 
 .inline-para i {
-    font-size: 15vh;
+    font-size: 8vw;
     display: inline-block;
     vertical-align: middle;
 }
@@ -536,11 +536,11 @@ h1 .line-dec {
 /* Section specific */
 
 .papers {
-    padding-bottom: 10vh;
+    padding-bottom: 5vw;
 }
 
 .art {
-    padding-bottom: 15vh;
+    padding-bottom: 9vw;
 }
 
 .art h1 {
@@ -549,7 +549,7 @@ h1 .line-dec {
 
 .art p {
     margin-left: 30%;
-    font-size: 3vh;
+    font-size: 1.5vw;
 }
 
 .art a {
@@ -563,7 +563,7 @@ h1 .line-dec {
 
 .work p {
     margin-left: 10%;
-    font-size: 3vh;
+    font-size: 1.5vw;
 }
 
 
@@ -608,7 +608,7 @@ h1 .line-dec {
     margin: auto;
     padding: 28px 22px;
     transition: all 0.2s ease;
-    top: 10vh;
+    top: 6vw;
     left: 40%;
     font-family: 'Prata';
     color: #252632;
@@ -630,8 +630,8 @@ h1 .line-dec {
 
 .cta span {
     position: relative;
-    font-size: 3vh;
-    line-height: 3vh;
+    font-size: 1.8vw;
+    line-height: 1.8vw;
     font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
