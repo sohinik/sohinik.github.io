@@ -1,0 +1,13 @@
+body {
+    background-image: url('./imgs/map_2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+button {
+    background-color: transparent;
+    border: 1px black solid;
+    position: fixed;
+    cursor: pointer;
+}
