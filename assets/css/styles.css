@@ -149,10 +149,10 @@ html {
 
 .resume-button {
     display: inline-block;
-    padding: .75% 1.5%;
+    padding: .8% 3%;
     background-color: #FEF5F6;
     color: #DA3347;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;

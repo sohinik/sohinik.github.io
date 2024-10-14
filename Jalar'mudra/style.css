@@ -1,0 +1,30 @@
+body {
+    background-image: url('./imgs/map_1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+button {
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    cursor: pointer;
+}
+
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+  }
+  
+  #mydivheader {
+    padding: 7px;
+    cursor: move;
+    z-index: 10;
+    background-color: #1c2024;
+    border-radius: 50em;
+  }
