@@ -54,7 +54,7 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: min(3vw, 24px);
     color: #252632;
     font-weight: 700;
 }
@@ -734,4 +734,13 @@ footer .line-dec {
     height: 1px;
     background-color: #FEF5F6;
     margin: 10px auto;
+}
+
+
+/* Responsive - https://www.geeksforgeeks.org/how-to-hide-elements-in-responsive-layout-using-css/*/
+/* Hide if the screen size is under 800px */
+@media only screen and (max-width: 800px) {
+    .lg {
+        display: none;
+    }
 }
