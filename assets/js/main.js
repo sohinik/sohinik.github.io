@@ -1,9 +1,114 @@
-// Listeners
-window.addEventListener('resize', function () {
-  document.getElementById('flowers-area').setAttribute("style", "height:" + parseInt($(".landing").css('height')) + "px");
-})
+// ========================================
+// PERFORMANCE OPTIMIZATIONS
+// ========================================
 
-document.addEventListener("mousemove", parallax);
+// Debounce function for performance
+function debounce(func, wait = 10, immediate = false) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+// Throttle function for performance
+function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+
+// ========================================
+// LOADING SPINNER
+// ========================================
+
+window.addEventListener("load", function () {
+  const spinner = document.getElementById("loading-spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.classList.add("hidden");
+    }, 300);
+  }
+});
+
+// ========================================
+// SCROLL PROGRESS BAR
+// ========================================
+
+const updateScrollProgress = throttle(function () {
+  const scrollProgress = document.getElementById("scroll-progress");
+  if (scrollProgress) {
+    const windowHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + "%";
+    scrollProgress.setAttribute("aria-valuenow", Math.round(scrolled));
+  }
+}, 50);
+
+window.addEventListener("scroll", updateScrollProgress);
+
+// ========================================
+// BACK TO TOP BUTTON
+// ========================================
+
+const backToTop = document.getElementById("back-to-top");
+
+const toggleBackToTop = throttle(function () {
+  if (backToTop) {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  }
+}, 100);
+
+window.addEventListener("scroll", toggleBackToTop);
+
+if (backToTop) {
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
+
+// ========================================
+// PARALLAX & INTERACTIVE FLOWERS
+// ========================================
+
+// Listeners
+window.addEventListener(
+  "resize",
+  debounce(function () {
+    document
+      .getElementById("flowers-area")
+      .setAttribute(
+        "style",
+        "height:" + parseInt($(".landing").css("height")) + "px",
+      );
+  }, 250),
+);
+
+document.addEventListener("mousemove", throttle(parallax, 16)); // ~60fps
 function parallax(event) {
   this.querySelectorAll(".landing-flowers").forEach((shift) => {
     const position = shift.getAttribute("value");
@@ -25,48 +130,85 @@ $(document).ready(function () {
     console.log("Header image loaded");
   }
 
-  document.getElementById('flowers-area').setAttribute("style", "height:" + parseInt($(".landing").css('height')) + "px");
+  document
+    .getElementById("flowers-area")
+    .setAttribute(
+      "style",
+      "height:" + parseInt($(".landing").css("height")) + "px",
+    );
 
-  // Set up interactive flowers area
-  var mousePos = {};
+  // ========================================
+  // INTERACTIVE FLOWERS WITH THROTTLING
+  // ========================================
+
+  var mousePos = { x: -1, y: -1 };
+  var lastDrawTime = 0;
+  var drawInterval = 50; // Throttle to ~20fps for flower drawing
 
   function getRandomInt(min, max) {
     return Math.round(Math.random() * (max - min + 1)) + min;
   }
 
-  $(window).mousemove(function (e) {
-    mousePos.x = e.pageX;
-    mousePos.y = e.pageY;
-  });
+  $(window).mousemove(
+    throttle(function (e) {
+      mousePos.x = e.pageX;
+      mousePos.y = e.pageY;
+    }, 16),
+  ); // ~60fps for tracking
 
   $(window).mouseleave(function (e) {
     mousePos.x = -1;
     mousePos.y = -1;
   });
 
-  var draw = setInterval(function () {
-    if (mousePos.x > 0 && mousePos.y > 0 && mousePos.y < parseInt($("#flowers-area").css('height'))) {
+  // Use requestAnimationFrame for smoother performance
+  function drawFlower() {
+    const currentTime = Date.now();
 
-      var range = 5;
+    if (currentTime - lastDrawTime >= drawInterval) {
+      if (
+        mousePos.x > 0 &&
+        mousePos.y > 0 &&
+        mousePos.y < parseInt($("#flowers-area").css("height"))
+      ) {
+        var range = 5;
 
-      var color = "background-image: url('./assets/images/flower-" + getRandomInt(0, 6) + ".png');";
-      // var color = "";
+        var color =
+          "background-image: url('./assets/images/flower-" +
+          getRandomInt(0, 6) +
+          ".png');";
 
-      var sizeInt = getRandomInt(10, 30);
-      size = "height: " + sizeInt + "px; width: " + sizeInt + "px;";
+        var sizeInt = getRandomInt(10, 30);
+        var size = "height: " + sizeInt + "px; width: " + sizeInt + "px;";
 
-      var left = "left: " + getRandomInt(mousePos.x - range - sizeInt, mousePos.x + range) + "px;";
+        var left =
+          "left: " +
+          getRandomInt(mousePos.x - range - sizeInt, mousePos.x + range) +
+          "px;";
+        var top =
+          "top: " +
+          getRandomInt(mousePos.y - range - sizeInt, mousePos.y + range) +
+          "px;";
 
-      var top = "top: " + getRandomInt(mousePos.y - range - sizeInt, mousePos.y + range) + "px;";
+        var style = left + top + color + size;
+        $("<div class='flowers' style=\"" + style + '"></div>')
+          .appendTo("#page-wrapper")
+          .one(
+            "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+            function () {
+              $(this).remove();
+            },
+          );
+      }
 
-      var style = left + top + color + size;
-      $("<div class='flowers' style=\"" + style + "\"></div>").appendTo('#page-wrapper').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () { $(this).remove(); });
-
-      // console.log(document.getElementById("page-wrapper"));
-      // console.log("<div class='flowers' style=\"" + style + "\"></div>");
-      // console.log(color);
+      lastDrawTime = currentTime;
     }
-  }, 50);
+
+    requestAnimationFrame(drawFlower);
+  }
+
+  // Start the animation loop
+  requestAnimationFrame(drawFlower);
 });
 
 // Highly specific projects blobs animations
@@ -76,11 +218,11 @@ function animateMouseover() {
     d: [
       {
         value:
-          "M230.079-32.689L1993.92-32.689C2151.08-32.689+2278.48+93.5231+2278.48+249.214L2278.48+1418.79C2278.48+1574.48+2151.08+1700.69+1993.92+1700.69L230.079+1700.69C72.9205+1700.69-54.4816+1574.48-54.4816+1418.79L-54.4816+249.214C-54.4816+93.5231+72.9205-32.689+230.079-32.689Z"
-      }
+          "M230.079-32.689L1993.92-32.689C2151.08-32.689+2278.48+93.5231+2278.48+249.214L2278.48+1418.79C2278.48+1574.48+2151.08+1700.69+1993.92+1700.69L230.079+1700.69C72.9205+1700.69-54.4816+1574.48-54.4816+1418.79L-54.4816+249.214C-54.4816+93.5231+72.9205-32.689+230.079-32.689Z",
+      },
     ],
     easing: "easeOutElastic(2, 1.5)",
-    duration: 400
+    duration: 400,
   });
 }
 
@@ -89,7 +231,7 @@ function animateMouseout() {
     targets: this.selector,
     d: [{ value: this.dValue }],
     easing: "easeOutElastic(2, 1.5)",
-    duration: 400
+    duration: 400,
   });
 }
 
@@ -98,13 +240,25 @@ function buttonAnimation(hov, selector, dValue) {
   const btn2 = document.querySelector(selector);
 
   if (btn) {
-    btn.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
-    btn.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+    btn.addEventListener(
+      "mouseover",
+      animateMouseover.bind({ selector, dValue }),
+    );
+    btn.addEventListener(
+      "mouseout",
+      animateMouseout.bind({ selector, dValue }),
+    );
   }
 
   if (btn2) {
-    btn2.addEventListener("mouseover", animateMouseover.bind({ selector, dValue }));
-    btn2.addEventListener("mouseout", animateMouseout.bind({ selector, dValue }));
+    btn2.addEventListener(
+      "mouseover",
+      animateMouseover.bind({ selector, dValue }),
+    );
+    btn2.addEventListener(
+      "mouseout",
+      animateMouseout.bind({ selector, dValue }),
+    );
   }
 }
 const blobA =
@@ -131,44 +285,102 @@ buttonAnimation("#full3", "#blob3", blobC);
 buttonAnimation("#full4", "#blob4", blobD);
 buttonAnimation("#full2", "#blob5", blobB);
 
-// Fun scroll stuff
+// ========================================
+// INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
+// ========================================
+
+// More performant scroll animations using Intersection Observer
 const scrollElements = document.querySelectorAll(".js-scroll");
 
-const elementInView = (el, dividend = 1) => {
-  const elementTop = el.getBoundingClientRect().top;
-
-  return (
-    elementTop <=
-    (window.innerHeight || document.documentElement.clientHeight) / dividend
-  );
+const scrollObserverOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.2,
 };
 
-const elementOutofView = (el) => {
-  const elementTop = el.getBoundingClientRect().top;
-
-  return (
-    elementTop > (window.innerHeight || document.documentElement.clientHeight)
-  );
-};
-
-const displayScrollElement = (element) => {
-  element.classList.add("scrolled");
-};
-
-const hideScrollElement = (element) => {
-  element.classList.remove("scrolled");
-};
-
-const handleScrollAnimation = () => {
-  scrollElements.forEach((el) => {
-    if (elementInView(el, 1.25)) {
-      displayScrollElement(el);
-    } else if (elementOutofView(el)) {
-      hideScrollElement(el)
+const scrollObserver = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("scrolled");
+    } else {
+      // Optional: remove class when element leaves viewport
+      // Uncomment the line below if you want animations to replay
+      // entry.target.classList.remove("scrolled");
     }
-  })
+  });
+}, scrollObserverOptions);
+
+// Observe all scroll elements
+scrollElements.forEach((el) => {
+  scrollObserver.observe(el);
+});
+
+// Fallback for older browsers that don't support Intersection Observer
+if (!("IntersectionObserver" in window)) {
+  const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("scrolled");
+  };
+
+  const handleScrollAnimation = throttle(() => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 1.25)) {
+        displayScrollElement(el);
+      }
+    });
+  }, 100);
+
+  window.addEventListener("scroll", handleScrollAnimation);
+  // Initial check
+  handleScrollAnimation();
 }
 
-window.addEventListener("scroll", () => {
-  handleScrollAnimation();
-});
+// ========================================
+// LAZY LOADING IMAGES (Enhanced)
+// ========================================
+
+// Native lazy loading is already added via HTML attributes
+// This provides a fallback for older browsers
+if ("loading" in HTMLImageElement.prototype) {
+  // Browser supports native lazy loading
+  console.log("Native lazy loading supported");
+} else {
+  // Fallback for browsers that don't support native lazy loading
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+  const lazyImageObserver = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute("data-src");
+        }
+        lazyImageObserver.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach((img) => {
+    lazyImageObserver.observe(img);
+  });
+}
+
+// ========================================
+// PRELOAD CRITICAL IMAGES
+// ========================================
+
+// Preload the landing image for better performance
+const landingImg = document.getElementById("landing");
+if (landingImg && !landingImg.complete) {
+  landingImg.addEventListener("load", function () {
+    console.log("Landing image loaded");
+  });
+}

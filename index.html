@@ -1,477 +1,1049 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="Sohini Kar" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sohini Kar" />
+    <meta name="author" content="Sohini Kar" />
+    <meta
+      name="keywords"
+      content="Sohini Kar, software engineer, UI/UX designer, MIT, AI research, web development, portfolio, digital art, computer science"
+    />
+    <meta name="robots" content="index, follow" />
 
-  <title>Sohini Kar</title>
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Sohini Kar" />
+    <meta
+      property="og:description"
+      content="Portfolio featuring AI research, web development projects, and digital art by MIT graduate Sohini Kar."
+    />
+    <meta
+      property="og:image"
+      content="https://sohinik.github.io/assets/images/mit22.jpg"
+    />
+    <meta property="og:url" content="https://sohinik.github.io/" />
+    <meta property="og:type" content="website" />
 
-  <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/fontawesome.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sohini Kar" />
+    <meta
+      name="twitter:description"
+      content="Portfolio featuring AI research, web development projects, and digital art."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sohinik.github.io/assets/images/mit22.jpg"
+    />
 
-<body>
-  <div id="page-wrapper">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sohinik.github.io/" />
 
+    <title>Sohini Kar</title>
 
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <div class="section" id="flowers-area">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-      <img class="landing" id="landing" src='assets/images/landing-background.png' />
-      <div class="lg">
-        <img class="landing-flowers flower-0" src='assets/images/flower-0.png' value="3" />
-        <img class="landing-flowers flower-1" src='assets/images/flower-1.png' value="1" />
-        <img class="landing-flowers flower-2" src='assets/images/flower-2.png' value="2" />
-        <img class="landing-flowers flower-3" src='assets/images/flower-3.png' value="3" />
-        <img class="landing-flowers flower-4" src='assets/images/flower-4.png' value="4" />
-        <img class="landing-flowers flower-5" src='assets/images/flower-5.png' value="5" />
-        <img class="landing-flowers flower-6" src='assets/images/flower-6.png' value="6" />
-        <img class="landing-flowers flower-7" src='assets/images/flower-7.png' value="7" />
-      </div>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+    />
+  </head>
 
+  <body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- Loading Spinner -->
+    <div
+      id="loading-spinner"
+      class="loading-spinner"
+      aria-label="Loading page content"
+    >
+      <div class="spinner"></div>
     </div>
 
-
-
-    <section class="section intro" id="intro">
-      <span class="inline-para">
-        <h1>
-          Welcome! <img src="assets/images/mit22.jpg" />
-          <br>
-          <br>
-          <div class="line-dec"></div>
-          <img src="assets/images/halcyon.jpg" /> Projects and papers <i
-            class="material-icons">arrow_downward</i>
-        </h1>
-      </span>
-    </section>
-
-
-
-    <section class="section papers" id="projects">
-      <div class="container">
-        <h2 class="vertical-text lg">Final Papers </h2>
-
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="https://dspace.mit.edu/bitstream/handle/1721.1/151473/kar-skar-meng-eecs-2023-thesis.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">school</i>
-                <h2>Master of Engineering Thesis</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>Master of Engineering Thesis</h2>
-                <p>This research presents the development of <i>homo-silicus</i>, a Python-based library for
-                  simulating economic experiments and social scenarios using AI subjects. Using the
-                  library, users can design, test, and analyze results of experiments conducted <i>in silico</i>.
-                </p>
-              </div>
-            </a>
+    <!-- Scroll Progress Bar -->
+    <div
+      id="scroll-progress"
+      class="scroll-progress"
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    ></div>
+    <div id="page-wrapper">
+      <!-- Main Content Area -->
+      <main id="main-content">
+        <section
+          class="section"
+          id="flowers-area"
+          aria-label="Landing section with decorative flowers"
+        >
+          <img
+            class="landing"
+            id="landing"
+            src="assets/images/landing-background.png"
+            alt="Pink floral background with decorative pattern"
+            loading="eager"
+          />
+          <div class="lg" aria-hidden="true">
+            <img
+              class="landing-flowers flower-0"
+              src="assets/images/flower-0.png"
+              value="3"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-1"
+              src="assets/images/flower-1.png"
+              value="1"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-2"
+              src="assets/images/flower-2.png"
+              value="2"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-3"
+              src="assets/images/flower-3.png"
+              value="3"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-4"
+              src="assets/images/flower-4.png"
+              value="4"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-5"
+              src="assets/images/flower-5.png"
+              value="5"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-6"
+              src="assets/images/flower-6.png"
+              value="6"
+              alt=""
+            />
+            <img
+              class="landing-flowers flower-7"
+              src="assets/images/flower-7.png"
+              value="7"
+              alt=""
+            />
           </div>
-        </div>
+        </section>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.835_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">waving_hand</i>
-                <h2>6.835 Intelligent Multimodal User Interfaces</h2>
+        <section
+          class="section intro"
+          id="intro"
+          aria-labelledby="intro-heading"
+        >
+          <span class="inline-para">
+            <h1 id="intro-heading">
+              Welcome!
+              <img
+                src="assets/images/mit22.jpg"
+                alt="Sohini Kar at MIT graduation"
+                loading="lazy"
+              />
+              <br />
+              <br />
+              <div class="line-dec" aria-hidden="true"></div>
+              <img
+                src="assets/images/halcyon.jpg"
+                alt="Abstract artistic representation"
+                loading="lazy"
+              />
+              Featured Projects
+              <i class="material-icons" aria-label="Scroll down"
+                >arrow_downward</i
+              >
+            </h1>
+          </span>
+        </section>
+
+        <section
+          class="section work"
+          data-section="section2"
+          id="work"
+          aria-labelledby="work-heading"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="column">
+                <figure class="snip1">
+                  <a
+                    href="https://www.behance.net/gallery/220792387/Something-Brazen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Something Brazen project on Behance - Opens in new window"
+                  >
+                    <button
+                      class="blob-btn"
+                      style="margin: 0; padding: 0"
+                      aria-label="View Something Brazen project"
+                    >
+                      <svg
+                        style="
+                          background-image: url(&quot;assets/images/brazen.png&quot;);
+                          background-size: 95% 95%;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        "
+                        height="50%"
+                        style="
+                          fill-rule: evenodd;
+                          clip-rule: evenodd;
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                        "
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        width="100%"
+                        xmlns:vectornator="http://vectornator.io"
+                        version="1.1"
+                        viewBox="0 0 2224 1668"
+                        perserveAspectRatio="false"
+                        role="img"
+                        aria-label="Project thumbnail for Something Brazen"
+                      >
+                        <path
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
+                          fill="#ffffff"
+                          stroke-linecap="butt"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="miter"
+                        />
+                        <path
+                          id="blob3"
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M722.943-18.1583L1324.18+100.798C1687.35+171.414+2260.09+28.3941+2271.63+464.681L2279.42+759.184C2290.96+1195.47+2258.69+1608.6+1416.53+1632.7L852.345+1648.85C200.264+1667.52-13.8522+1526.76-28.2462+982.482L-28.2462+400.345C-28.2462-18.1583+327.497-72.9284+722.943-18.1583Z"
+                          fill="#ffffff"
+                          stroke-linecap="round"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </a>
+                  <h4>Something Brazen</h4>
+                  <span
+                    >My work on Brazen, a platform connecting women
+                    entrepreneurs with angel investors. I gained valuable
+                    experience in entrepreneurship and designing for startups,
+                    building wireframes on Figma and a low-code MVP on
+                    bubble.io</span
+                  >
+                </figure>
               </div>
-              <div class="card-hover lg">
-                <h2>6.835 Intelligent Multimodal User Interfaces</h2>
-                <p>We built a D&D-inspired multimodal spellcasting game focused on teaching users how to
-                  perform various spells using both speech and gesture recognition, and in turn, use these spells to
-                  attack and defeat a variety of enemies.
-                </p>
+              <div class="column">
+                <figure class="snip1">
+                  <a
+                    href="https://xd.adobe.com/view/999f5f57-a53d-4542-ba7f-4601df8aaaa1-cccc/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="6.805 privacy policy project on Adobe XD - Opens in new window"
+                  >
+                    <button
+                      class="blob-btn"
+                      style="margin: 0; padding: 0"
+                      aria-label="View 6.805 project"
+                    >
+                      <svg
+                        style="
+                          background-image: url(&quot;assets/images/6805.png&quot;);
+                          background-size: 95% 95%;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        "
+                        height="50%"
+                        style="
+                          fill-rule: evenodd;
+                          clip-rule: evenodd;
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                        "
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        width="100%"
+                        xmlns:vectornator="http://vectornator.io"
+                        version="1.1"
+                        viewBox="0 0 2224 1668"
+                        perserveAspectRatio="false"
+                        role="img"
+                        aria-label="Project thumbnail for 6.805"
+                      >
+                        <path
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
+                          fill="#ffffff"
+                          stroke-linecap="butt"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="miter"
+                        />
+                        <path
+                          id="blob1"
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M705.587+0L1245.8+60.1222C1580.47+102.592+2135.69-18.0223+2224+474.628L2271.87+1118.47C2271.87+1522.78+2168.25+1779.65+1388.5+1668L773.539+1604.32C313.212+1588.3-27.8406+1500.65-11.8193+1040.33L0.672888+795.321C16.6942+334.994+41.3592-54.7701+705.587+0Z"
+                          fill="#ffffff"
+                          stroke-linecap="round"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </a>
+                  <h4>6.805 Final Project</h4>
+                  <span
+                    >For our final project in 6.805 (Foundations of Information
+                    Policy), I developed a pool-based active learning algorithm
+                    to generate personalized data privacy policies. I used Adobe
+                    XD to create example UIs prototyping our
+                    recommendations.</span
+                  >
+                </figure>
+                <!-- <figure class="snip1">
+                  <a
+                    href="https://www.behance.net/gallery/109202057/Venmo-Redesign"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Venmo Redesign project on Behance - Opens in new window"
+                  >
+                    <button
+                      class="blob-btn"
+                      style="margin: 0; padding: 0"
+                      aria-label="View Venmo Redesign project"
+                    >
+                      <svg
+                        style="
+                          background-image: url(&quot;assets/images/venmomockup.png&quot;);
+                          background-size: 95% 95%;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        "
+                        height="50%"
+                        style="
+                          fill-rule: evenodd;
+                          clip-rule: evenodd;
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                        "
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        width="100%"
+                        xmlns:vectornator="http://vectornator.io"
+                        version="1.1"
+                        viewBox="0 0 2224 1668"
+                        perserveAspectRatio="false"
+                        role="img"
+                        aria-label="Project thumbnail for Venmo Redesign"
+                      >
+                        <path
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
+                          fill="#ffffff"
+                          stroke-linecap="butt"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="miter"
+                        />
+                        <path
+                          id="blob4"
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M598.257+0L1419.36+0C2024.46+0+2309.2+156.793+2224+818.726L2182.56+1134.41C2149.85+1319.76+2224+1722.77+1415.72+1668L598.257+1668C267.849+1668-85.2011+1579.61+0+916.356L56.5058+416.643C65.5915+189.501+267.849+0+598.257+0Z"
+                          fill="#ffffff"
+                          stroke-linecap="round"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </a>
+                  <h4>Venmo Redesign</h4>
+                  <span
+                    >For one of my first UI/UX case studies, I used Figma,
+                    Origami Studio, and Canva in this redesign of Venmo. I was
+                    able to learn about basic principles in user research,
+                    creating prototypes from wireframes, and studying existing
+                    designs.</span
+                  >
+                </figure> -->
               </div>
-            </a>
+              <div class="column">
+                <figure class="snip1">
+                  <a
+                    href="https://github.com/sohinik/multimodal-fantasy-game"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kalpana multimodal game project on GitHub - Opens in new window"
+                  >
+                    <button
+                      class="blob-btn"
+                      style="margin: 0; padding: 0"
+                      aria-label="View Kalpana project"
+                    >
+                      <svg
+                        style="
+                          background-image: url(&quot;assets/images/kalpana.png&quot;);
+                          background-size: 95% 95%;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        "
+                        height="50%"
+                        style="
+                          fill-rule: evenodd;
+                          clip-rule: evenodd;
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                        "
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        width="100%"
+                        xmlns:vectornator="http://vectornator.io"
+                        version="1.1"
+                        viewBox="0 0 2224 1668"
+                        perserveAspectRatio="false"
+                        role="img"
+                        aria-label="Project thumbnail for Kalpana"
+                      >
+                        <path
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
+                          fill="#ffffff"
+                          stroke-linecap="butt"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="miter"
+                        />
+                        <path
+                          id="blob2"
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M598.257+0L1419.36+0C2024.46+0+2309.2+156.793+2224+818.726L2182.56+1134.41C2149.85+1319.76+2224+1722.77+1415.72+1668L598.257+1668C267.849+1668-85.2011+1579.61+0+916.356L56.5058+416.643C65.5915+189.501+267.849+0+598.257+0Z"
+                          fill="#ffffff"
+                          stroke-linecap="round"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </a>
+                  <h4>6.835 Final Project: Kalpana</h4>
+                  <span
+                    >We built a D&D-inspired multimodal spellcasting game
+                    focused on teaching users how to perform various spells
+                    using both speech and gesture recognition, and in turn, use
+                    these spells to attack and defeat a variety of enemies.
+                  </span>
+                </figure>
+                <!-- <figure class="snip1">
+                  <a
+                    href="https://github.com/sohinik/accessilink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="AccessiLink project on GitHub - Opens in new window"
+                  >
+                    <button
+                      class="blob-btn"
+                      style="margin: 0; padding: 0"
+                      aria-label="View AccessiLink project"
+                    >
+                      <svg
+                        style="
+                          background-image: url(&quot;assets/images/accessilink.png&quot;);
+                          background-size: 95% 95%;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        "
+                        height="50%"
+                        style="
+                          fill-rule: evenodd;
+                          clip-rule: evenodd;
+                          stroke-linecap: round;
+                          stroke-linejoin: round;
+                        "
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        width="100%"
+                        xmlns:vectornator="http://vectornator.io"
+                        version="1.1"
+                        viewBox="0 0 2224 1668"
+                        perserveAspectRatio="false"
+                        role="img"
+                        aria-label="Project thumbnail for AccessiLink"
+                      >
+                        <path
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
+                          fill="#ffffff"
+                          stroke-linecap="butt"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="miter"
+                        />
+                        <path
+                          id="blob5"
+                          stroke="#fff"
+                          stroke-width="300"
+                          d="M512.607+117.846L919.646+126.562C1650.13+188.345+2309.2-147.826+2224+818.726L2184.37+1313.15C2164.38+1553.01+1790.05+1772.89+1297.61+1668L616.184+1587.54C203.694+1540.29+0+1507.59+0+973.348L0+642.629C0+304.641+72.8601+109.807+512.607+117.846Z"
+                          fill="#ffffff"
+                          stroke-linecap="round"
+                          fill-opacity="0"
+                          opacity="1"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </a>
+                  <h4>AccessiLink</h4>
+                  <span>
+                    AccessiLink is a tool for visually impaired people to better
+                    see all the links available on a given URL. We used
+                    Flask/Python for the backend, HTML/CSS/Javascript for the
+                    frontend, and Figma for the initial wireframes. This project
+                    won the Figma Award at
+                    <a href="https://haccess.isodme.com">hACCESS</a>!</span
+                  >
+                </figure> -->
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/GENED1038_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">night_shelter</i>
-                <h2>GENED 1038 Sleep</h2>
+        <section
+          class="section papers"
+          id="projects"
+          aria-labelledby="projects-heading"
+        >
+          <div class="container">
+            <h1 id="work-heading" style="margin-bottom: 3rem">
+              Papers + Reports
+              <div class="line-dec" aria-hidden="true"></div>
+            </h1>
+            <!-- <h2 class="vertical-text lg" id="projects-heading">Final Papers</h2> -->
+
+            <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="https://dspace.mit.edu/bitstream/handle/1721.1/151473/kar-skar-meng-eecs-2023-thesis.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Master of Engineering Thesis - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">school</i>
+                    <h2>Master of Engineering Thesis</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>Master of Engineering Thesis</h2>
+                    <p>
+                      This research presents the development of
+                      <i>homo-silicus</i>, a Python-based library for simulating
+                      economic experiments and social scenarios using AI
+                      subjects. Using the library, users can design, test, and
+                      analyze results of experiments conducted <i>in silico</i>.
+                    </p>
+                  </div>
+                </a>
               </div>
-              <div class="card-hover lg">
-                <h2>GENED 1038 Sleep</h2>
-                <p>In this paper, I explored the similarities in
-                  symptoms of sleep disorders and ADHD, as well as how they may interact with each
-                  other and contribute to the misdiagnosis of ADHD. Class taken at Harvard!
-                </p>
+            </div>
+
+            <!-- <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.835_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.835 Intelligent Multimodal User Interfaces paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">waving_hand</i>
+                    <h2>6.835 Intelligent Multimodal User Interfaces</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>6.835 Intelligent Multimodal User Interfaces</h2>
+                    <p>
+                      We built a D&D-inspired multimodal spellcasting game
+                      focused on teaching users how to perform various spells
+                      using both speech and gesture recognition, and in turn,
+                      use these spells to attack and defeat a variety of
+                      enemies.
+                    </p>
+                  </div>
+                </a>
               </div>
-            </a>
+            </div> -->
+
+            <!-- <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/GENED1038_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GENED 1038 Sleep paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true"
+                      >night_shelter</i
+                    >
+                    <h2>GENED 1038 Sleep</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>GENED 1038 Sleep</h2>
+                    <p>
+                      In this paper, I explored the similarities in symptoms of
+                      sleep disorders and ADHD, as well as how they may interact
+                      with each other and contribute to the misdiagnosis of
+                      ADHD. Class taken at Harvard!
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+
+            <!-- <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/STS.030_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="STS.030 Forensic History paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">history_edu</i>
+                    <h2>
+                      STS.030: Forensic History: Problem Solving into the Past
+                    </h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>
+                      STS.030: Forensic History: Problem Solving into the Past
+                    </h2>
+                    <p>
+                      We move into a new house and can finally start a garden.
+                      We dig in the back yard and suddenly hit skeletons of
+                      three people! This essay discussed what we would do next.
+                      Whose bones are they? Who owns the bones? Who gets to
+                      speak for the bones?
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+
+            <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.08_Report.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.08 Introduction to EECS project - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">lyrics</i>
+                    <h2>
+                      6.08 Introduction to EECS via Interconnected Embedded
+                      Systems
+                    </h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>
+                      6.08 Introduction to EECS via Interconnected Embedded
+                      Systems
+                    </h2>
+                    <p>
+                      Our project focused on creating a group Spotify party
+                      hosting platform where each user is allowed to add songs
+                      to a shared song queue which will be played out of an
+                      IOT-connected speaker.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.864_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.864 Advanced Natural Language Processing paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true"
+                      >record_voice_over</i
+                    >
+                    <h2>6.864 Advanced Natural Language Processing</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>6.864 Advanced Natural Language Processing</h2>
+                    <p>
+                      In this paper, we applied a variety of model architectures
+                      to the problems of song lyric classification and
+                      generation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.804_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.804 Computational Cognitive Science paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">psychology</i>
+                    <h2>6.804 Computational Cognitive Science</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>6.804 Computational Cognitive Science</h2>
+                    <p>
+                      Speech alternatives enable listeners to draw pragmatic
+                      inferences in language understanding. We modeled how the
+                      proportion of people who inferred directness from a verb
+                      with no lexical causative form used in the periphrastic
+                      form was greater than from a verb with a lexical causative
+                      form.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.805_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.805 Foundations of Information Policy paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true">policy</i>
+                    <h2>6.805 Foundations of Information Policy</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>6.805 Foundations of Information Policy</h2>
+                    <p>
+                      Here, we discussed the ensuing harm from users’ lack of
+                      control over smart home technologies, and best practices
+                      to minimize their privacy risks. We propose and compare
+                      three recommended policies and their limitations on both
+                      commercial producers and users
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- <div class="card-container js-scroll slide-right">
+              <div class="card-main">
+                <a
+                  href="assets/docs/6.021_Paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="6.021 Cellular Neurophysiology and Computing paper - Opens in new window"
+                >
+                  <div class="card-display">
+                    <i class="material-icons" aria-hidden="true"
+                      >battery_charging_full</i
+                    >
+                    <h2>6.021 Cellular Neurophysiology and Computing</h2>
+                  </div>
+                  <div class="card-hover lg">
+                    <h2>6.021 Cellular Neurophysiology and Computing</h2>
+                    <p>
+                      In this paper, we determined the effect of external sodium
+                      conductance on the action potential, specifically focusing
+                      on the refractory period by computationally modelling the
+                      Hodgkin-Huxley Model.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div> -->
           </div>
-        </div>
+        </section>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/STS.030_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">history_edu</i>
-                <h2>STS.030: Forensic History: Problem Solving into the Past</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>STS.030: Forensic History: Problem Solving into the Past</h2>
-                <p>We move into a new house and can finally start a garden. We dig in the back yard and suddenly hit
-                  skeletons of three people!
-                  This essay discussed what we would do next. Whose bones are they? Who owns the bones? Who gets to
-                  speak for the bones?
-                </p>
-              </div>
-            </a>
+        <section class="section art" id="art" aria-labelledby="art-heading">
+          <h1 id="art-heading">
+            <div class="line-dec" aria-hidden="true"></div>
+            Art [etc]
+          </h1>
+          <p>
+            * (Combining both gouache paintings and digital art. More may found
+            on my
+            <a
+              href="https://www.instagram.com/somani.kars/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >art Instagram</a
+            >.)
+          </p>
+
+          <div class="row">
+            <div class="column">
+              <a href="Jalar'mudra/imgs/bender_1.JPG"
+                ><img
+                  src="assets/images/art-11.JPG"
+                  alt="Gouache painting artwork"
+                  loading="lazy"
+              /></a>
+              <a href="24bday/24invite.html"
+                ><img
+                  src="assets/images/lake.jpg"
+                  alt="Lake scene digital artwork"
+                  loading="lazy"
+              /></a>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="assets/images/art-14.JPG"
+                  alt="Original artwork piece"
+                  loading="lazy"
+              /></a>
+              <!-- sorry :( -->
+              <a href="assets/images/art-15.JPG"
+                ><img
+                  src="assets/images/art-15.JPG"
+                  alt="Digital illustration"
+                  loading="lazy"
+              /></a>
+              <img
+                src="assets/images/art-18.JPG"
+                alt="Colorful abstract painting"
+                loading="lazy"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="assets/images/halcyon.jpg"
+                alt="Halcyon themed artwork"
+                loading="lazy"
+              />
+              <img
+                src="assets/images/art-17.JPG"
+                alt="Artistic composition"
+                loading="lazy"
+              />
+              <a
+                href="https://www.freecodecamp.org/news/how-to-turn-text-and-images-into-links-using-html/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="assets/images/art-10.JPG"
+                  alt="Featured artwork"
+                  loading="lazy"
+              /></a>
+              <img
+                src="assets/images/art-16.JPG"
+                alt="Creative art piece"
+                loading="lazy"
+              />
+              <img
+                src="assets/images/art-8.JPG"
+                alt="Gouache painting"
+                loading="lazy"
+              />
+              <img
+                src="assets/images/digital3.png"
+                alt="Digital artwork number 3"
+                loading="lazy"
+              />
+            </div>
+            <div class="column lg">
+              <img
+                src="assets/images/art-12.JPG"
+                alt="Art collection piece 12"
+                loading="lazy"
+              />
+              <img
+                src="assets/images/art-13.JPG"
+                alt="Art collection piece 13"
+                loading="lazy"
+              />
+              <a href="Jalar'mudra/index.html"
+                ><img
+                  src="assets/images/daydream.jpg"
+                  alt="Daydream themed artwork for homebrew D&D"
+                  loading="lazy"
+              /></a>
+              <!-- homebrew! -->
+              <img
+                src="assets/images/art-9.JPG"
+                alt="Original painting"
+                loading="lazy"
+              />
+              <a
+                href="https://mit.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="assets/images/art-7.JPG"
+                  alt="MIT themed artwork"
+                  loading="lazy"
+              /></a>
+            </div>
           </div>
-        </div>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.08_Report.html" target="_blank">
-              <div class="card-display"><i class="material-icons">lyrics</i>
-                <h2>6.08 Introduction to EECS via Interconnected Embedded Systems</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>6.08 Introduction to EECS via Interconnected Embedded Systems</h2>
-                <p>Our project focused on creating a group Spotify party hosting platform where each user is allowed to
-                  add songs
-                  to a shared song queue which will be played out of an IOT-connected speaker.
-                </p>
-              </div>
-            </a>
+          <a
+            href="https://www.instagram.com/somani.kars/"
+            class="cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact on Instagram for art commissions"
+          >
+            <span>Contact Instagram for commissions</span>
+            <svg
+              width="26px"
+              height="20px"
+              viewBox="0 0 26 20"
+              aria-hidden="true"
+            >
+              <path d="M1,10 L22,10"></path>
+              <polyline points="16 2 24 10 16 18"></polyline>
+            </svg>
+          </a>
+        </section>
+      </main>
+      <!-- End Main Content -->
+
+      <footer role="contentinfo">
+        <a
+          href="#flowers-area"
+          title="Return to top"
+          aria-label="Return to top of page"
+        >
+          <div class="row">
+            <div class="column">
+              <img src="assets/images/flower-6.png" alt="" loading="lazy" />
+            </div>
+            <div class="column">
+              <img src="assets/images/flower-7.png" alt="" loading="lazy" />
+            </div>
+            <div class="column">
+              <img src="assets/images/flower-4.png" alt="" loading="lazy" />
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.864_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">record_voice_over</i>
-                <h2>6.864 Advanced Natural Language Processing</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>6.864 Advanced Natural Language Processing</h2>
-                <p>In this paper, we applied a variety of model architectures to the problems of song lyric
-                  classification and generation.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
+        <br />
+        <br />
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.804_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">psychology</i>
-                <h2>6.804 Computational Cognitive Science</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>6.804 Computational Cognitive Science</h2>
-                <p>Speech alternatives enable listeners to draw pragmatic inferences in language understanding.
-                  We modeled how the proportion of people who
-                  inferred directness from a verb with no lexical
-                  causative form used in the periphrastic form was
-                  greater than
-                  from a verb with a lexical causative form.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
+        <nav aria-label="Footer navigation">
+          <a href="#projects" aria-label="Go to papers section"> Papers </a>
+          <a href="#art" aria-label="Go to art section"> Art </a>
+          <a href="#work" aria-label="Go to projects section"> Projects </a>
+        </nav>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.805_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">policy</i>
-                <h2>6.805 Foundations of Information Policy</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>6.805 Foundations of Information Policy</h2>
-                <p>Here, we discussed the ensuing harm from users’ lack of control over smart home technologies,
-                  and best practices to minimize their privacy risks.
-                  We propose and compare three recommended policies and their limitations on both commercial producers
-                  and users
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
+        <nav aria-label="Social media links">
+          <a
+            href="mailto:sohinikar21@gmail.com"
+            title="Email me"
+            aria-label="Send me an email"
+          >
+            <i class="material-icons" aria-hidden="true">email</i>
+          </a>
+          <a
+            href="https://github.com/sohinik"
+            title="Check out my Github"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my GitHub profile"
+          >
+            <i class="material-icons" aria-hidden="true"
+              >integration_instructions</i
+            >
+          </a>
+          <a
+            href="assets/docs/Kar_Sohini_copy.pdf"
+            title="SWE Resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download my software engineering resume"
+          >
+            <i class="material-icons" aria-hidden="true">description</i>
+          </a>
+          <a
+            href="assets/docs/Kar_Sohini_Design_copy.pdf"
+            title="UI/UX Resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download my UI/UX design resume"
+          >
+            <i class="material-icons" aria-hidden="true">task</i>
+          </a>
+        </nav>
+        <br />
+        <div class="line-dec" aria-hidden="true"></div>
+        <br />
+        <h4>© Sohini Kar - last updated 2025</h4>
+      </footer>
 
-        <div class="card-container js-scroll slide-right">
-          <div class="card-main">
-            <a href="assets/docs/6.021_Paper.pdf" target="_blank">
-              <div class="card-display"><i class="material-icons">battery_charging_full</i>
-                <h2>6.021 Cellular Neurophysiology and Computing</h2>
-              </div>
-              <div class="card-hover lg">
-                <h2>6.021 Cellular Neurophysiology and Computing</h2>
-                <p>In
-                  this paper, we determined the effect of external sodium
-                  conductance on the action potential, specifically focusing on
-                  the refractory period by computationally modelling the Hodgkin-Huxley Model.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
+      <!-- Back to Top Button -->
+      <button
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="Scroll back to top"
+        title="Back to top"
+      >
+        <i class="material-icons" aria-hidden="true">arrow_upward</i>
+      </button>
+    </div>
 
-      </div>
-    </section>
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
 
+    <script src="assets/js/main.js"></script>
 
-
-    <section class="section work" data-section="section2" id="work">
-      <div class="container">
-        <h1>
-          Featured Projects
-          <div class="line-dec"></div>
-        </h1>
-
-
-        <div class="row">
-          <div class="column">
-            <figure class="snip1">
-              <a href="https://www.behance.net/gallery/220792387/Something-Brazen">
-                <button class="blob-btn" style="margin: 0; padding:0;">
-                  <svg
-                    style="background-image: url('assets/images/brazen.png'); background-size: 95% 95%; background-repeat: no-repeat; background-position: center;"
-                    height="50%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-                    width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 2224 1668"
-                    perserveAspectRatio="false">
-                    <path stroke="#fff" stroke-width="300"
-                      d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
-                      fill="#ffffff" stroke-linecap="butt" fill-opacity="0" opacity="1" stroke-linejoin="miter" />
-                    <path id="blob3" stroke="#fff" stroke-width="300"
-                      d="M722.943-18.1583L1324.18+100.798C1687.35+171.414+2260.09+28.3941+2271.63+464.681L2279.42+759.184C2290.96+1195.47+2258.69+1608.6+1416.53+1632.7L852.345+1648.85C200.264+1667.52-13.8522+1526.76-28.2462+982.482L-28.2462+400.345C-28.2462-18.1583+327.497-72.9284+722.943-18.1583Z"
-                      fill="#ffffff" stroke-linecap="round" fill-opacity="0" opacity="1" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </a>
-              <h4>Something Brazen</h4>
-              <span>My work on Brazen, a platform connecting women entrepreneurs with angel investors.
-                I gained valuable experience in entrepreneurship and designing for startups, building wireframes on Figma
-                and a low-code MVP on bubble.io</span>
-            </figure>
-            <figure class="snip1">
-              <a href="https://github.com/sohinik/multimodal-fantasy-game">
-                <button class="blob-btn" style="margin: 0; padding:0;">
-                  <svg
-                    style="background-image: url('assets/images/kalpana.png'); background-size: 95% 95%; background-repeat: no-repeat; background-position: center;"
-                    height="50%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-                    width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 2224 1668"
-                    perserveAspectRatio="false">
-                    <path stroke="#fff" stroke-width="300"
-                      d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
-                      fill="#ffffff" stroke-linecap="butt" fill-opacity="0" opacity="1" stroke-linejoin="miter" />
-                    <path id="blob2" stroke="#fff" stroke-width="300"
-                      d="M598.257+0L1419.36+0C2024.46+0+2309.2+156.793+2224+818.726L2182.56+1134.41C2149.85+1319.76+2224+1722.77+1415.72+1668L598.257+1668C267.849+1668-85.2011+1579.61+0+916.356L56.5058+416.643C65.5915+189.501+267.849+0+598.257+0Z"
-                      fill="#ffffff" stroke-linecap="round" fill-opacity="0" opacity="1" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </a>
-              <h4>6.835 Final Project: Kalpana</h4>
-              <span>We built a D&D-inspired multimodal spellcasting game focused on teaching users how to
-                perform various spells using both speech and gesture recognition, and in turn, use these spells to
-                attack and defeat a variety of enemies. </span>
-            </figure>
-          </div>
-          <div class="column">
-            <figure class="snip1">
-              <a href="https://xd.adobe.com/view/999f5f57-a53d-4542-ba7f-4601df8aaaa1-cccc/">
-                <button class="blob-btn" style="margin: 0; padding:0;">
-                  <svg
-                    style="background-image: url('assets/images/6805.png'); background-size: 95% 95%; background-repeat: no-repeat; background-position: center;"
-                    height="50%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-                    width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 2224 1668"
-                    perserveAspectRatio="false">
-                    <path stroke="#fff" stroke-width="300"
-                      d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
-                      fill="#ffffff" stroke-linecap="butt" fill-opacity="0" opacity="1" stroke-linejoin="miter" />
-                    <path id="blob1" stroke="#fff" stroke-width="300"
-                      d="M705.587+0L1245.8+60.1222C1580.47+102.592+2135.69-18.0223+2224+474.628L2271.87+1118.47C2271.87+1522.78+2168.25+1779.65+1388.5+1668L773.539+1604.32C313.212+1588.3-27.8406+1500.65-11.8193+1040.33L0.672888+795.321C16.6942+334.994+41.3592-54.7701+705.587+0Z"
-                      fill="#ffffff" stroke-linecap="round" fill-opacity="0" opacity="1" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </a>
-              <h4>6.805 Final Project</h4>
-              <span>For our final project in 6.805 (Foundations of Information Policy), I developed a pool-based active
-                learning algorithm
-                to generate personalized data privacy policies. I used Adobe XD to create example UIs prototyping our
-                recommendations.</span>
-            </figure>
-            <figure class="snip1">
-              <a href="https://www.behance.net/gallery/109202057/Venmo-Redesign">
-                <button class="blob-btn" style="margin: 0; padding:0;">
-                  <svg
-                    style="background-image: url('assets/images/venmomockup.png'); background-size: 95% 95%; background-repeat: no-repeat; background-position: center;"
-                    height="50%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-                    width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 2224 1668"
-                    perserveAspectRatio="false">
-                    <path stroke="#fff" stroke-width="300"
-                      d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
-                      fill="#ffffff" stroke-linecap="butt" fill-opacity="0" opacity="1" stroke-linejoin="miter" />
-                    <path id="blob4" stroke="#fff" stroke-width="300"
-                      d="M598.257+0L1419.36+0C2024.46+0+2309.2+156.793+2224+818.726L2182.56+1134.41C2149.85+1319.76+2224+1722.77+1415.72+1668L598.257+1668C267.849+1668-85.2011+1579.61+0+916.356L56.5058+416.643C65.5915+189.501+267.849+0+598.257+0Z"
-                      fill="#ffffff" stroke-linecap="round" fill-opacity="0" opacity="1" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </a>
-              <h4>Venmo Redesign</h4>
-              <span>For one of my first UI/UX case studies, I used Figma, Origami Studio, and Canva in this redesign of
-                Venmo.
-                I was able to learn about basic principles in user research, creating prototypes from wireframes, and
-                studying existing designs.</span>
-            </figure>
-          </div>
-          <div class="column">
-            <figure class="snip1">
-              <a href="https://github.com/sohinik/accessilink">
-                <button class="blob-btn" style="margin: 0; padding:0;">
-                  <svg
-                    style="background-image: url('assets/images/accessilink.png'); background-size: 95% 95%; background-repeat: no-repeat; background-position: center;"
-                    height="50%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-                    width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 2224 1668"
-                    perserveAspectRatio="false">
-                    <path stroke="#fff" stroke-width="300"
-                      d="M-85.2011-54.7701L2309.2-54.7701L2309.2+1722.77L-85.2011+1722.77L-85.2011-54.7701Z"
-                      fill="#ffffff" stroke-linecap="butt" fill-opacity="0" opacity="1" stroke-linejoin="miter" />
-                    <path id="blob5" stroke="#fff" stroke-width="300"
-                      d="M512.607+117.846L919.646+126.562C1650.13+188.345+2309.2-147.826+2224+818.726L2184.37+1313.15C2164.38+1553.01+1790.05+1772.89+1297.61+1668L616.184+1587.54C203.694+1540.29+0+1507.59+0+973.348L0+642.629C0+304.641+72.8601+109.807+512.607+117.846Z"
-                      fill="#ffffff" stroke-linecap="round" fill-opacity="0" opacity="1" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </a>
-              <h4>AccessiLink</h4>
-              <span>
-                AccessiLink is a tool for visually impaired people to better see all the links available on a given URL.
-                We used Flask/Python for the backend, HTML/CSS/Javascript for the frontend, and Figma for the initial
-                wireframes.
-                This project won the Figma Award at <a href="https://haccess.isodme.com">hACCESS</a>!</span>
-            </figure>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <section class="section art" id="art">
-      <h1>
-        <div class="line-dec"></div>
-        Art [etc]
-      </h1>
-      <p>
-        * (Combining both gouache paintings and digital art. More may found on my <a
-          href="https://www.instagram.com/somani.kars/">art Instagram</a>.)
-      </p>
-
-      <div class="row">
-        <div class="column">
-          <a href="Jalar'mudra/imgs/bender_1.JPG"><img src="assets/images/art-11.JPG"></a>
-          <a href="24bday/24invite.html"><img src="assets/images/lake.jpg"></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="assets/images/art-14.JPG"></a> <!-- sorry :( -->
-          <a href="assets/images/art-15.JPG"><img src="assets/images/art-15.JPG"></a>
-          <img src="assets/images/art-18.JPG">
-        </div>
-        <div class="column">
-          <img src="assets/images/halcyon.jpg">
-          <img src="assets/images/art-17.JPG">
-          <a href="https://www.freecodecamp.org/news/how-to-turn-text-and-images-into-links-using-html/"><img src="assets/images/art-10.JPG"></a>
-          <img src="assets/images/art-16.JPG">
-          <img src="assets/images/art-8.JPG">
-          <img src="assets/images/digital3.png">
-        </div>
-        <div class="column lg">
-          <img src="assets/images/art-12.JPG">
-          <img src="assets/images/art-13.JPG">
-          <a href="Jalar'mudra/index.html"><img src="assets/images/daydream.jpg"></a> <!-- homebrew! -->
-          <img src="assets/images/art-9.JPG">
-          <a href="https://mit.edu"><img src="assets/images/art-7.JPG"></a>
-        </div>
-      </div>
-
-      <a href="https://www.instagram.com/somani.kars/" class="cta">
-        <span>Contact Instagram for commissions</span>
-        <svg width="26px" height="20px" viewBox="0 0 26 20">
-          <path d="M1,10 L22,10"></path>
-          <polyline points="16 2 24 10 16 18"></polyline>
-        </svg>
-      </a>
-
-    </section>
-
-
-
-    <footer>
-      <a href="#flowers-area" title="Return to top">
-        <div class="row">
-          <div class="column">
-            <img src="assets/images/flower-6.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/flower-7.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/flower-4.png" />
-          </div>
-        </div>
-      </a>
-      
-      <br>
-      <br>
-
-      <a href="#projects" title="Email me!">
-        Papers
-      </a>
-      <a href="#art" title="Email me!">
-        Art
-      </a>
-      <a href="#work" title="Email me!">
-        Projects
-      </a>
-
-      <a href="mailto:sohinikar21@gmail.com" title="Email me!">
-        <i class="material-icons">email</i>
-      </a>
-      <a href="https://github.com/sohinik" title="Check out my Github!">
-        <i class="material-icons">integration_instructions</i>
-      </a>
-      <a href="assets/docs/Kar_Sohini_copy.pdf" title="SWE Resume">
-        <i class="material-icons">description</i>
-      </a>
-      <a href="assets/docs/Kar_Sohini_Design_copy.pdf" title="UI/UX Resume">
-        <i class="material-icons">task</i>
-      </a>
-      <br>
-      <div class="line-dec"></div>
-      <br>
-      <h4>
-        © Sohini Kar - last updated 2025
-      </h4>
-    </footer>
-
-
-
-  </div>
-
-  <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
-
-  <script src="assets/js/main.js"></script>
-
-  <script>
-
-  </script>
-</body>
-
+    <script></script>
+  </body>
 </html>
